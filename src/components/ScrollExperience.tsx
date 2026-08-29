@@ -115,19 +115,25 @@ export const ScrollExperience: React.FC = () => {
         <FrameViewer progress={progress} />
 
         {/* Minimal UI Overlay Header */}
-        <header className="absolute top-8 left-8 right-8 z-30 flex justify-between items-start pointer-events-none select-none">
+        <header className="absolute top-8 left-8 right-8 z-30 flex justify-between items-center pointer-events-none select-none">
           {/* Room / Location label */}
-          <RoomLabel 
-            location={activeFrame.location} 
-            section={activeFrame.section} 
-          />
+          <div className="flex-1">
+            <RoomLabel 
+              location={activeFrame.location} 
+              section={activeFrame.section} 
+            />
+          </div>
 
-          {/* Minimal House Tour Brand */}
-          <div className="flex flex-col items-end">
-            <span className="font-sans text-[10px] tracking-[0.4em] text-zinc-400 font-medium uppercase mb-0.5">
-              THE NATURE HOUSE
-            </span>
-            <span className="font-sans text-[8px] tracking-[0.2em] text-zinc-600 uppercase">
+          {/* Centered Website Name */}
+          <div className="flex-none text-center">
+            <h1 className="font-sans text-[11px] tracking-[0.5em] text-zinc-200 font-medium uppercase">
+              home sweet home
+            </h1>
+          </div>
+
+          {/* Minimal House Tour Brand / Metadata */}
+          <div className="flex-1 flex flex-col items-end">
+            <span className="font-sans text-[8px] tracking-[0.2em] text-zinc-500 uppercase">
               Immersive Walkthrough
             </span>
           </div>
