@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { frames, totalFrames, FrameInfo } from '../data/frames';
+import { totalFrames } from '../data/frames';
 import FrameViewer from './FrameViewer';
-import RoomLabel from './RoomLabel';
 import ProgressIndicator from './ProgressIndicator';
 import { ChevronDown } from 'lucide-react';
 
 export const ScrollExperience: React.FC = () => {
   const [progress, setProgress] = useState(1);
-  const [activeFrame, setActiveFrame] = useState<FrameInfo>(frames[0]);
-  
+
   // Refs for tracking scroll position in requestAnimationFrame loop
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const currentProgressRef = useRef(1);
@@ -73,9 +71,7 @@ export const ScrollExperience: React.FC = () => {
       
       setProgress(cleanProgress);
 
-      // Determine active frame info based on floor of current progress
-      const frameIndex = Math.min(totalFrames - 1, Math.floor(cleanProgress) - 1);
-      setActiveFrame(frames[frameIndex]);
+
 
       animationFrameIdRef.current = requestAnimationFrame(updateLerp);
     };
@@ -117,13 +113,8 @@ export const ScrollExperience: React.FC = () => {
         {/* Translucent UI Overlay Header with Bottom Fade */}
         <header className="absolute top-0 left-0 right-0 z-50 pt-6 pb-20 px-8 bg-gradient-to-b from-zinc-950/90 via-zinc-950/40 to-transparent pointer-events-none select-none">
           <div className="flex justify-between items-center w-full">
-            {/* Room / Location label */}
-            <div className="flex-1">
-              <RoomLabel 
-                location={activeFrame.location} 
-                section={activeFrame.section} 
-              />
-            </div>
+            {/* Empty space to preserve center-alignment */}
+            <div className="flex-1"></div>
 
             {/* Centered Website Name */}
             <div className="flex-none text-center">
@@ -196,10 +187,7 @@ export const ScrollExperience: React.FC = () => {
           </div>
         )}
 
-        {/* Technical debugging watermark (subtle bottom-left indicator for inspection) */}
-        <div className="absolute bottom-4 left-4 z-30 font-mono text-[8px] text-zinc-700 select-none pointer-events-none">
-          FRAME {Math.floor(progress)} / {totalFrames} • OFFSET {Math.floor(progress * scrollHeightPerFrame)}px
-        </div>
+
       </div>
     </div>
   );
