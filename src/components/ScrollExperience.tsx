@@ -132,11 +132,18 @@ export const ScrollExperience: React.FC = () => {
               </h1>
             </div>
 
-            {/* Minimal House Tour Brand / Metadata */}
-            <div className="flex-1 flex flex-col items-end">
-              <span className="font-sans text-[8px] tracking-[0.2em] text-zinc-500 uppercase">
+            {/* Minimal House Tour Brand / Metadata & Menu */}
+            <div className="flex-1 flex items-center justify-end gap-6">
+              <span className="hidden sm:inline font-sans text-[8px] tracking-[0.2em] text-zinc-500 uppercase">
                 Immersive Walkthrough
               </span>
+              <button 
+                className="pointer-events-auto flex flex-col gap-1 items-end group p-2 -mr-2 cursor-pointer"
+                aria-label="Menu"
+              >
+                <span className="w-5 h-[1.5px] bg-zinc-400 group-hover:bg-zinc-100 transition-all duration-300"></span>
+                <span className="w-3.5 h-[1.5px] bg-zinc-400 group-hover:w-5 group-hover:bg-zinc-100 transition-all duration-300"></span>
+              </button>
             </div>
           </div>
         </header>
