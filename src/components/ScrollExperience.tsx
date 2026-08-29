@@ -114,8 +114,8 @@ export const ScrollExperience: React.FC = () => {
         {/* Immersive Frame Viewer */}
         <FrameViewer progress={progress} />
 
-        {/* Minimal UI Overlay Header */}
-        <header className="absolute top-8 left-8 right-8 z-30 flex justify-between items-center pointer-events-none select-none">
+        {/* Translucent UI Overlay Header */}
+        <header className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-5 md:py-6 bg-zinc-950/40 backdrop-blur-md border-b border-zinc-900/10 pointer-events-none select-none">
           {/* Room / Location label */}
           <div className="flex-1">
             <RoomLabel 
