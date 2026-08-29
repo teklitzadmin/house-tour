@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { totalFrames } from '../data/frames';
 import FrameViewer from './FrameViewer';
+import HouseLogo from './HouseLogo';
 import ProgressIndicator from './ProgressIndicator';
 import { ChevronDown } from 'lucide-react';
 
@@ -109,6 +110,9 @@ export const ScrollExperience: React.FC = () => {
         
         {/* Immersive Frame Viewer */}
         <FrameViewer progress={progress} />
+
+        {/* Floating Outline House Sketch (Hero Element) */}
+        <HouseLogo progress={progress} />
 
         {/* Translucent UI Overlay Header with Bottom Fade */}
         <header className="absolute top-0 left-0 right-0 z-50 pt-6 pb-20 px-8 bg-gradient-to-b from-zinc-950/90 via-zinc-950/40 to-transparent pointer-events-none select-none">
