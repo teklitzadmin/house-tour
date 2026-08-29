@@ -114,28 +114,30 @@ export const ScrollExperience: React.FC = () => {
         {/* Immersive Frame Viewer */}
         <FrameViewer progress={progress} />
 
-        {/* Translucent UI Overlay Header */}
-        <header className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-5 md:py-6 bg-zinc-950/40 backdrop-blur-md border-b border-zinc-900/10 pointer-events-none select-none">
-          {/* Room / Location label */}
-          <div className="flex-1">
-            <RoomLabel 
-              location={activeFrame.location} 
-              section={activeFrame.section} 
-            />
-          </div>
+        {/* Translucent UI Overlay Header with Bottom Fade */}
+        <header className="absolute top-0 left-0 right-0 z-50 pt-6 pb-20 px-8 bg-gradient-to-b from-zinc-950/90 via-zinc-950/40 to-transparent pointer-events-none select-none">
+          <div className="flex justify-between items-center w-full">
+            {/* Room / Location label */}
+            <div className="flex-1">
+              <RoomLabel 
+                location={activeFrame.location} 
+                section={activeFrame.section} 
+              />
+            </div>
 
-          {/* Centered Website Name */}
-          <div className="flex-none text-center">
-            <h1 className="font-sans text-[11px] tracking-[0.5em] text-zinc-200 font-medium uppercase">
-              home sweet home
-            </h1>
-          </div>
+            {/* Centered Website Name */}
+            <div className="flex-none text-center">
+              <h1 className="font-sans text-[11px] tracking-[0.5em] text-zinc-200 font-medium uppercase">
+                home sweet home
+              </h1>
+            </div>
 
-          {/* Minimal House Tour Brand / Metadata */}
-          <div className="flex-1 flex flex-col items-end">
-            <span className="font-sans text-[8px] tracking-[0.2em] text-zinc-500 uppercase">
-              Immersive Walkthrough
-            </span>
+            {/* Minimal House Tour Brand / Metadata */}
+            <div className="flex-1 flex flex-col items-end">
+              <span className="font-sans text-[8px] tracking-[0.2em] text-zinc-500 uppercase">
+                Immersive Walkthrough
+              </span>
+            </div>
           </div>
         </header>
 
