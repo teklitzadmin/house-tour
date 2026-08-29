@@ -127,6 +127,25 @@ export const HouseLogo: React.FC<HouseLogoProps> = ({ progress }) => {
             );
           })}
         </g>
+        {/* Animated Architectural Text Outline */}
+        <text 
+          x="306" 
+          y="350" 
+          textAnchor="middle" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="1.0" 
+          letterSpacing="0.45em"
+          className="font-sans text-[14px] uppercase font-light text-zinc-300"
+          style={{
+            strokeDasharray: 600,
+            strokeDashoffset: erasePct * 600,
+            opacity: opacity,
+            transition: 'stroke-dashoffset 0.05s ease-out'
+          }}
+        >
+          home sweet home
+        </text>
       </svg>
     </div>
   );
